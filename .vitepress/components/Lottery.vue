@@ -48,21 +48,28 @@ const filterMappings = () => {
 .mapping-component {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mapping-component select {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid #ccc;
+  width: 150px;  
+  height: 40px;  
+  padding: 5px;  
+  border: 2px solid #ccc;  
+  border-radius: 5px;  
+  background-color: #fff;  
 }
 
 .mapping-component input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 1px solid #ccc;
+  width: 200px;  
+  height: 40px;  
+  padding: 5px;  
+  border: 2px solid #ccc;  
+  border-radius: 5px;  
+  background-color: #fff;  
 }
 
 .mapping-component ul {

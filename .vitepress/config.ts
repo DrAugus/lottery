@@ -16,11 +16,11 @@ export default defineConfig({
         // }],
     ],
     themeConfig: {
-        logo: '/logo/logo.jpg',
+        // logo: '/logo/logo.jpg',
         // nav: navbar_zh,
         // sidebar: sidebar_zh,
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/DrAugus/lottery/tree/master/game' },
+            { icon: 'github', link: 'https://github.com/DrAugus/lottery/tree/master/' },
         ],
         editLink: {
             pattern: 'https://github.com/DrAugus/lottery/tree/master/:path',
