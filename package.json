@@ -1,0 +1,21 @@
+{
+	"name": "lottery",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "china lottery",
+	"author": "Augus",
+	"private": false,
+	"repository": "https://github.com/DrAugus/lottery",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"dev": "vitepress dev .",
+		"build": "vitepress build .",
+		"preview": "vitepress preview ."
+	},
+	"devDependencies": {
+		"vitepress": "1.0.0-rc.31",
+		"vue": "^3.3.9"
+	}
+}

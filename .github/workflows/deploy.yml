@@ -1,0 +1,66 @@
+name: ci-deploy-life
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "README.md"
+      # - ".github/workflows/deploy.yml"
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+    paths-ignore:
+      - "README.md"
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest] # macos-latest, windows-latest
+        node: [16]
+        deploy-dir: [.vitepress/dist]
+        deploy-user: [augusmeow]
+        # deploy-repo: [life, augusmeow.github.io]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # 选择要使用的 node 版本
+          node-version: ${{ matrix.node }}
+
+      - uses: pnpm/action-setup@v2.4.0
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+
+      # 运行构建脚本
+      - name: Build VitePress site
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+        run: pnpm build
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v4.0.0
+        with:
+          # repo: ${{ matrix.deploy-user }}/${{ matrix.deploy-repo }}
+          target_branch: gh-pages
+          build_dir: ${{ matrix.deploy-dir }}
+          jekyll: false
+        env:
+          GH_PAT: ${{ secrets.DEPLOY_GH }}
