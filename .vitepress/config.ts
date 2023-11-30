@@ -6,7 +6,7 @@ export default defineConfig({
     // These are app level configs.
     title: '彩票',
     description: '福彩体彩刮刮乐',
-    base: "/",
+    base: "/lottery/",
     lastUpdated: true,
     cleanUrls: true,
     head: [
