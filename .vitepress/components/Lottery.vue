@@ -1,5 +1,5 @@
 <template>
-  <div class="lottery">
+  <div class="VPFeatures VPHomeFeatures">
     <div class="custom-select-wrapper">
       <div class="custom-select">
         <select v-model="selectedCategory">
@@ -54,7 +54,8 @@ const filterMappings = () => {
 .custom-select-wrapper {
   height: 100%;
   margin: 30px;
-  padding: 30px;
+  border-radius: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +85,7 @@ const filterMappings = () => {
   text-indent: 0.01px;
   text-overflow: '';
   border: none;
+  font-size: 20px;
   /* 清除默认边框 */
   outline: none;
   /* 清除轮廓样式 */
