@@ -15,7 +15,7 @@
 		"preview": "vitepress preview ."
 	},
 	"devDependencies": {
-		"sass": "^1.77.1",
+		"sass": "^1.77.2",
 		"vitepress": "1.1.4",
 		"vue": "^3.4.27"
 	}
